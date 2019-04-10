@@ -6,3 +6,8 @@
 
 choco install jdk8
 choco install maven
+
+refreshenv
+
+# check
+mvn -v
