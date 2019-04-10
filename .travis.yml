@@ -1,8 +1,8 @@
 os: windows
 language: sh
 
-before_script: env-setup.sh
-script: build.sh
+before_script: ./env-setup.sh
+script: ./build.sh
 
 before_deploy:
   - git config --local user.name "stariy95"
