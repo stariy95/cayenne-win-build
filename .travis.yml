@@ -2,7 +2,7 @@ os: windows
 language: sh
 
 before_script: ./env-setup.sh
-script: ./build.sh
+script: travis_wait ./build.sh
 
 before_deploy:
   - git config --local user.name "stariy95"
