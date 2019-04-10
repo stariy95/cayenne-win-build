@@ -4,6 +4,7 @@
 # Build Cayenne Windows assembly
 # basically it's unpacking src archive and running maven build.
 #
+export JAVA_HOME="/c/Program Files/Java/jdk1.8.0_201"
 
 # change dir to one with this script
 cd "$( dirname "${BASH_SOURCE[0]}" )"
