@@ -11,5 +11,5 @@ choco install maven
 JAVA_HOME="C:\\Program Files\\Java\\jdk1.8.0_201\\"
 
 # check
-${JAVA_HOME}\bin\java -version
-C:\ProgramData\chocolatey\bin\mvn -v
+"${JAVA_HOME}\\bin\\java" -version
+"C:\\ProgramData\\chocolatey\\bin\\mvn" -v
