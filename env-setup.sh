@@ -7,7 +7,8 @@
 choco install jdk8
 choco install maven
 
-refreshenv
+# TODO: can this be done by chocolatey? or something else more robust?
+JAVA_HOME="C:\\Program Files\\Java\\jdk1.8.0_201\\"
 
 # check
 mvn -v
