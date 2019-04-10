@@ -1,0 +1,23 @@
+os: windows
+language: sh
+
+before_script: env-setup.sh
+script: build.sh
+
+before_deploy:
+  - git config --local user.name "stariy95"
+  - git config --local user.email "stariy95@gmail.com"
+  - export TRAVIS_TAG=cayenne-win-assembly
+  - git tag $TRAVIS_TAG
+
+deploy:
+  provider: releases
+  # travis encrypt -r stariy95/cayenne-win-build "abc12345"
+  api_key:
+    secure: "B5EbNh6DIlS1faV6qqCRvIG8S+1326aQQ46vCHtW/GnmKiHREvLkqVNaXjRxd0ARkfYQhSmRksxLAEKnQ0qLe1VsErJ6eiOJkt1MvMxYCQkzzPb/1tF/tn85UNcZ3LI+B2ajdZW88pSoL3qU/ejHTBBB7GvW03kNeVElVgF5HB5tTr/9G4j54u9Af87HEhXjw70CLph2tyVMQquimSsl6DaCP8D5Zn4wT15yY3O2OBsvroN9J7qvA8sC8so0YS8cnUfnF3ejGH9sFLtU8noFiMJE1F18zrk11ImY2YqQSGXtybn0D2/nPpV/UzKmDwb30DjHiUYeGBHuDCj2h7Vf1GIhjQc8pmLjzVXN1iS9bLR2341hoyusda4X5OSdeb4izgOGU3SSjM5tj1M2HB3ejvcrCw2Iu+O2x44WjDQUlVXqdCSZojGVscPKfNoHfuYAmCUSv89MyogqZKviE7zl8gASDGS3iZUcUpXrTeginwbkXGdO8Kp3i2NotGHK2YA5z9mNeW0PghAnpAwsy/AgEaxBBgynMXb3skA5GBZ0IjCObhhXTkHmx8g9U/rYISMAousLx7gWcZ9M8n36FJWvKXzO/YtJBkppBF+fMATsB6OJ5pC7WxLphwaXaeKFQCyl2drUH1khoxIXadrd5jgbprSE/RJ7geuwj3Wue+VRBBs="
+  file: "./build/assembly/"
+  skip_cleanup: true
+  draft: true
+  overwrite: true
+
+install: true
