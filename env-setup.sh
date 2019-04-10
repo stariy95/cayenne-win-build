@@ -11,4 +11,4 @@ JAVA_HOME="/c/Program Files/Java/jdk1.8.0_201"
 
 # check
 "${JAVA_HOME}/bin/java" -version
-./mvnw.cmd -v
+./mvnw -v

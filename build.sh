@@ -25,7 +25,7 @@ echo "Source directory: $SRC_DIR"
 cd  "$BUILD_DIR/$SRC_DIR"
 
 echo "Running Maven build... it can take a while..."
-./mvnw.cmd install -Passembly,windows -q -DskipTests -Duser.name=n.timofeev > /dev/null 2>&1
+./mvnw install -Passembly,windows -q -DskipTests -Duser.name=n.timofeev > /dev/null 2>&1
 
 cd "$BUILD_DIR/$SRC_DIR/assembly/target"
 ASSEMBLY=`ls -p | grep win.zip\$`
